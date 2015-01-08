@@ -1,0 +1,66 @@
+﻿@model StartupBuilderSite.Models.UserProfileModel
+@{
+	ViewBag.Title = "Profile";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row user-profile-section">
+	<div class="col-md-4">
+		<h1>@Model.FirstName @Model.LastName</h1>
+		<div class="pull-left"><img title="profile image" class="img-circle img-responsive user-profile-image" src="http://www.buerger-energie-berlin.de/wp-content/uploads/nest-supporters/person_placeholder_6.jpg"></div>
+	</div>
+	<div class="col-md-6">
+		<form class="form-horizontal">
+			<div class="form-group personal-profile">
+				<div class="field-section">
+					@Html.LabelFor(model => model.FirstName)
+					@Html.TextBoxFor(model => model.FirstName, new {@id = "fname", @class = "form-control"})
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.LastName)
+					@Html.TextBoxFor(model => model.LastName, new { @id = "lname", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.MiddleName)
+					@Html.TextBoxFor(model => model.MiddleName, new { @id = "mname", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.Email)
+					@Html.TextBoxFor(model => model.Email, new { @id = "email", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.Phone)
+					@Html.TextBoxFor(model => model.Phone, new { @id = "phone", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.City)
+					@Html.TextBoxFor(model => model.City, new { @id = "city", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.State)
+					@Html.TextBoxFor(model => model.State, new { @id = "state", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.Zip)
+					@Html.TextBoxFor(model => model.Zip, new { @id = "zip", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.GChatHandle)
+					@Html.TextBoxFor(model => model.GChatHandle, new { @id = "gchathandle", @class = "form-control" })
+				</div>
+				<div class="field-section">
+					@Html.LabelFor(model => model.SkypeHanle)
+					@Html.TextBoxFor(model => model.SkypeHanle, new { @id = "skypehandle", @class = "form-control" })
+				</div>
+				<div class="field-secion">
+					@Html.LabelFor(model => model.ProfileMission)
+					@Html.TextAreaFor(model => model.ProfileMission, new {@id = "personalmission", @rows = "5", @cols = "80"})
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>
+
+
+

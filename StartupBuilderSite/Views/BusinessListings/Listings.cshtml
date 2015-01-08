@@ -1,0 +1,44 @@
+﻿@using System.Reflection.Emit
+@model IEnumerable<StartupBuilderSite.Models.BusinessListingModel>
+@{
+	ViewBag.Title = "Listings";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><u>Opportunities</u></h1>
+<div class="container">
+	@foreach (var listing in Model) {
+		<div class="col-md-10">
+			<div class="row">
+				<div class="col-md-8">
+					<h3>
+						@Html.Raw(@listing.Name)
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					@Html.Raw(@listing.Summary)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 skill-checks">
+					<h4>Current Roster</h4>
+
+					@foreach (var skill in listing.Skills) {
+						@Html.Raw("<img src=\"http://html.net/forums/avatar.png\" alt=\"IMAGES\" />")
+						@Html.CheckBoxFor(x => skill.SkillIsFilled, new { @disabled = true} )
+						@Html.HiddenFor(x => skill.SkillName)
+						@Html.DisplayFor(x => skill.SkillName)
+					}
+				</div>
+			</div>
+			<div class="row">
+				<button class="btn btn-success pull-right">Apply</button>
+			</div>
+			<div class="row">
+				<hr />
+			</div>
+		</div>
+	}
+</div>
